@@ -17,6 +17,7 @@ Vue.mixin({
     if (window) {
       console.log('chrome')
       this.service = httpService
+      console.log(this.service)
       this.router = '/#'
       this.imgSrc = '../..'
     } else {

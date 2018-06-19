@@ -1,5 +1,4 @@
 import config from './config'
-
 import '../utils/preview'
 export default {
   //ajax请求
