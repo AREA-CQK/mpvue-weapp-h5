@@ -1,21 +1,23 @@
 <template>
     <div class="container">
-    <Swiper>
-        <Slide>
-                1
-        </Slide>
-        <Slide>
-                2
-        </Slide>
-        <Slide>
-                3
-        </Slide>
-    </Swiper>
+        <swiper class="swiperbox">
+            <!-- slides -->
+            <swiper-item>I'm Slide 1</swiper-item>
+            <swiper-item>I'm Slide 2</swiper-item>
+            <swiper-item>I'm Slide 3</swiper-item>
+            <swiper-item>I'm Slide 4</swiper-item>
+            <swiper-item>I'm Slide 5</swiper-item>
+            <!-- Optional controls -->
+            <div class="swiper-pagination"  slot="pagination"></div>
+        </swiper>
+
     </div>
 </template>
 <script>
 import util from '../../utils/util'
 import store from '../../vuex/store'
+
+// import { swiperSlide } from 'vue-awesome-swiper' //只在H5使用
 
 export default {
     name: "chat",
@@ -25,17 +27,13 @@ export default {
         }
     },
     components:{
-        Swiper,
-        Slide
+        // swiperItem: swiperSlide   //只在H5使用
     },
     methods: {
  
     },
     mounted(){
-        // this.service.previewImg(
-        //    'https://pic.ziroom.com/static/upload/cms/2016/12/6f8ac101cdf4a67facc0028d22f530b6.jpg',
-        //    ['https://pic.ziroom.com/static/upload/cms/2016/12/6f8ac101cdf4a67facc0028d22f530b6.jpg','https://pic.ziroom.com/static/upload/cms/2017/08/0fb4fcd6d0f1c4a765be6658e43d9819.jpg']
-        // )
+   
     },
     created () {
 
@@ -44,5 +42,7 @@ export default {
 
 </script>
 <style>
-
+.swiperbox{
+    width:100%;
+}
 </style>

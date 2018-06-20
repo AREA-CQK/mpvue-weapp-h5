@@ -15,7 +15,7 @@ export default {
   },
   async httpRequest(options = {}) {
     let data = await new Promise((resolve, reject) => {
-      options.url = config.host + options.url.split('/api')[1];
+      options.url = config.host + options.url;
       wx.request({
         url: options.url,
         data: Object.assign({}, options.data),
@@ -29,14 +29,17 @@ export default {
     })
     return data
   },
-  async getScreenWidth() {
+  async getScreenOption() {
     let data = await new Promise((resolve, reject) => {
       wx.getSystemInfo({
         success: resolve,
         fail: reject
       })
     })
-    return data;
+    return {
+      screenWidth: data.screenWidth,
+      screenHeigth: data.screenHeight
+    };
   },
   async navigatePageTo(url = '/') {
     await wx.navigateTo({
@@ -73,5 +76,27 @@ export default {
       current: current, // 当前显示图片的http链接
       urls: imgArray // 需要预览的图片http链接列表
     })
+  },
+  //本地存储
+  setStorage(key, value) {
+    if (typeof value === 'object') {
+      value = JSON.stringify(value)
+    }
+    wx.setStorageSync(key, value);
+  },
+  getStorage(key) {
+    const value = wx.getStorageSync(key);
+    try {
+      return JSON.parse(value)
+    } catch (err) {
+      return value
+    }
+  },
+  clearStorage(){
+    wx.clearStorage()
+  },
+  removeStorage(key){
+    wx.removeStorageSync(key)
   }
+
 }

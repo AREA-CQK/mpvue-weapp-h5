@@ -7,6 +7,16 @@ import wxService from './api/wxService'
 import httpService from './api/httpService'
 import './filter';
 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+import 'swiper/dist/css/swiper.css'
+ 
+Vue.use(VueAwesomeSwiper,{
+  pagination: {
+    el: '.swiper-pagination'
+  }
+})
+
 Vue.config.productionTip = false
 
 Vue.mixin({

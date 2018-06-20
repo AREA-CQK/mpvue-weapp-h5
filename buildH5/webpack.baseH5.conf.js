@@ -35,6 +35,10 @@ module.exports = {
         loaders: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader?sourceMap']
       },
       {
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader','resolve-url-loader']
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
