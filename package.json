@@ -31,6 +31,7 @@
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
     "vue-scroller": "^2.2.4",
+    "vue-swiper-component": "^2.1.2",
     "vuex": "^2.3.1",
     "webpack-mpvue-asset-plugin": "0.0.1"
   },

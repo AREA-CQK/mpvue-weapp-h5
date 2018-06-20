@@ -15,13 +15,10 @@ Vue.mixin({
   },
   created() {
     if (window) {
-      console.log('chrome')
       this.service = httpService
-      console.log(this.service)
       this.router = '/#'
       this.imgSrc = '../..'
     } else {
-      console.log('wx')
       this.service = wxService
       this.imgSrc = '/static'
     }

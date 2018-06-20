@@ -10,7 +10,7 @@
   "miniprogramRoot": "./dist/",
   "compileType": "miniprogram",
   "appid": "",
-  "projectname": "stockRobot",
+  "projectname": "ziroom-small",
   "libVersion": "1.9.98",
   "condition": {
     "search": {
